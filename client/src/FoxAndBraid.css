@@ -1,15 +1,32 @@
-.foxTemplateMain {
-  background-color: #3b1e54;
+:root {
+  --mainColor: #7867ad;
+  --trimColor: #f7efe5;
+  --backgroundColor: #e2bfd9;
+  --accessoryColor: #c8a1e0;
 }
 
-.foxTemplateTrim {
-  background-color: #9b7ebd;
+/* Pallette and other groupings */
+.mainColor {
+  background: var(--mainColor);
 }
 
-.foxTemplateBackground {
-  background-color: #d4bee4;
+.trimColor {
+  background: var(--trimColor);
 }
 
-.foxTemplateAccessory {
-  background-color: #ffffeb;
+.backgroundColor {
+  background: var(--backgroundColor);
+}
+
+.accessoryColor {
+  background: var(--accessoryColor);
+}
+
+.font-primary {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif,
+    cursive;
+}
+
+/* Mobile screen settings */
+@media screen and (max-width: 700px) {
 }
