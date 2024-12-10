@@ -1,26 +1,28 @@
 import { useState } from "react";
-
+import FnbMain from "./components/fnbMain";
+import AboutMe from "./components/AboutMe";
+import Portfolio from "./components/Portfolio";
+import Contact from "./components/Contact";
+import {Routes, Route} from 'react-router-dom';
+import NavigationBar from "./components/NavigationBar";
+import Booking from "./components/Booking";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
-    <div style={{ minHeight: "100vh" }}>
-      <Router>
+    <>
         <NavigationBar />
-        <div style={{ marginBottom: "20px" }}>
+        <div style={{ marginBottom: "20px" }}> </div>
           <Routes>
-            <Route path="/" element={<fnbMain />} />
-            <Route path="/aboutMe" element={<aboutMe />} />
-            <Route path="/portfolio" element={<portfolio />} />
-            <Route path="/contact" element={<contact />} />
+            <Route path="/" element={<FnbMain />} />
+            <Route path="/about" element={<AboutMe />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path='/booking' element={<Booking />} />
           </Routes>
-        </div>
-        <Footer />
-      </Router>
-    </div>
-  );
+    </>
+  )
 }
 
 export default App;
