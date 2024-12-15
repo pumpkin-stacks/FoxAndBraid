@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import fnbMain from "../components/pageSection/FnBLandingPage/fnbMain";
-import aboutMe from "../components/pageSection/aboutMePage/aboutMe";
-import portfolio from "../components/pageSection/portfolioPage/portfolio";
-import contact from "../components/pageSection/contactPage/contact";
+import FnbMain from "../components/pageSection/FnBLandingPage/fnbMain";
+import AboutMe from "../components/pageSection/aboutMePage/aboutMe";
+import Portfolio from "../components/pageSection/portfolioPage/portfolio";
+import Contact from "../components/pageSection/contactPage/contact";
 import NavigationBar from "../components/navbarSection/navigationBar";
-import Footer from "../components/footerSection/footer";
-import siteControl from "../components/store/siteControl";
+// import Footer from "../components/footerSection/footer";
+// import SiteControl from "../components/store/siteControl";
 
 import "./FoxAndBraid.css";
 import "./App.css";
@@ -14,20 +14,17 @@ import "./App.css";
 function App() {
   return (
     <div style={{ minHeight: "100vh" }}>
-      <Router>
-        <siteControl>
+        {/* <siteControl> */}
           <NavigationBar />
           <div style={{ marginBottom: "20px" }}>
             <Routes>
-              <Route path="/" element={<fnbMain />} />
-              <Route path="/aboutMe" element={<aboutMe />} />
-              <Route path="/portfolio" element={<portfolio />} />
-              <Route path="/contact" element={<contact />} />
+              <Route path="/" element={<FnbMain />} />
+              <Route path="/aboutMe" element={<AboutMe />} />
+              <Route path="/portfolio" element={<Portfolio />} />
+              <Route path="/contact" element={<Contact />} />
             </Routes>
           </div>
-          <Footer />
-        </siteControl>
-      </Router>
+        {/* </siteControl> */}
     </div>
   );
 }
