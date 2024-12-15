@@ -2,21 +2,20 @@ import React, { useState } from 'react';
 
 const Contact = (props) => {
 
+    const [formData, setFormData] = useState({
+        name: '',
+        email: '',
+        phoneNumber: 0,
+        eventDate: '',
+        services: '',
+        location: '',
+        
+    })
 
-
-//  Name 
-// Email
-// Phone number 
-// Date of event
-// Services; hair. Makeup. Or Both hair and makeup 
-// How many people needing services
-// Location 
 
     return (
         <>
         <p>CONTACT PAGE</p>
-        <p>test</p>
-        <p>test</p>
             <div className='info'>
                 <form>
                     <label>Name</label>
