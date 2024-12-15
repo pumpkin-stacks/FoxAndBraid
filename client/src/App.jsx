@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import FnbMain from "../components/pageSection/FnBLandingPage/fnbMain";
-import AboutMe from "../components/pageSection/aboutMePage/aboutMe";
-import Portfolio from "../components/pageSection/portfolioPage/portfolio";
-import Contact from "../components/pageSection/contactPage/contact";
-import NavigationBar from "../components/navbarSection/navigationBar";
+import NavigationBar from "./components/NavigationBar";
+import About from "./components/About";
+import Main from "./components/Main";
+import Contact from "./components/Contact";
+import Booking from "./components/Booking";
+import Portfolio from "./components/Portfolio";
 // import Footer from "../components/footerSection/footer";
 // import SiteControl from "../components/store/siteControl";
 
@@ -13,19 +14,16 @@ import "./App.css";
 
 function App() {
   return (
-    <div style={{ minHeight: "100vh" }}>
-        {/* <siteControl> */}
+        <>
           <NavigationBar />
-          <div style={{ marginBottom: "20px" }}>
             <Routes>
-              <Route path="/" element={<FnbMain />} />
-              <Route path="/aboutMe" element={<AboutMe />} />
+              <Route path="/" element={<Main />} />
+              <Route path="/about" element={<About />} />
               <Route path="/portfolio" element={<Portfolio />} />
               <Route path="/contact" element={<Contact />} />
+              <Route path="/booking" element={<Booking />} />
             </Routes>
-          </div>
-        {/* </siteControl> */}
-    </div>
+        </>
   );
 }
 

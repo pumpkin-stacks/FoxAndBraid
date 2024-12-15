@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-const FnbMain = (props) => {
+const Main = (props) => {
   return (
     <>
       <p>HOME PAGE</p>
@@ -8,4 +8,4 @@ const FnbMain = (props) => {
   );
 };
 
-export default FnbMain;
+export default Main;

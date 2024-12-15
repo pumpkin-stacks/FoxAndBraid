@@ -2,7 +2,9 @@ import React, { useState } from 'react';
 
 const Portfolio = (props) => {
   return (
-    <div></div>
+    <div>
+      <p>Portfolio page</p>
+    </div>
   );
 };
 

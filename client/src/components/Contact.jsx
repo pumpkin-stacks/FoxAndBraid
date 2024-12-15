@@ -15,6 +15,8 @@ const Contact = (props) => {
     return (
         <>
         <p>CONTACT PAGE</p>
+        <p>test</p>
+        <p>test</p>
             <div className='info'>
                 <form>
                     <label>Name</label>
@@ -34,6 +36,8 @@ const Contact = (props) => {
 
                     <label>Location</label>
                     <input type="text" />
+
+                    
                 </form>
             </div>
         </>
