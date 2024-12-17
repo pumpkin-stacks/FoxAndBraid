@@ -1,4 +1,4 @@
-/* :root {
+:root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -65,4 +65,27 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
-} */
+}
+
+/* contact page */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 50vw;
+}
+
+.contactField {
+  display: flex;
+  flex-direction: column;
+}
+
+.servicesField {
+  display: flex;
+  flex-direction: column;
+}
+
+.addressField{
+  display: flex;
+  flex-direction: column;
+}
