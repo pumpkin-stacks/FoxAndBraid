@@ -36,6 +36,7 @@ const Contact = (props) => {
             <div className='info'>
                 <form className='form'>
 
+
                     <fieldset className='contactField'>
                         <legend>Contact info</legend>
                             <label>Name</label>
@@ -75,9 +76,6 @@ const Contact = (props) => {
                     </fieldset>
 
 
-
-
-
                     <fieldset className="servicesField">
                             <legend>Sevices</legend>
 
@@ -115,8 +113,6 @@ const Contact = (props) => {
                                 <input type="number" />
                                 </label>
                     </fieldset>
-
-
 
 
                     <fieldset className='addressField'>
