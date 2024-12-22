@@ -7,11 +7,16 @@ const Contact = (props) => {
         email: '',
         phoneNumber: '',
         eventDate: '',
-        services: ['Hair', 'Makeup', 'Both'],
         streetAddress: '',
         
     })
+
+    const [selectedService, setSelectedService] = useState('');
     
+
+
+
+
     const handleChange = (e) => {
         const {name, email, phoneNumber, eventDate, services, location} = e.target;
         if (type === 'checkbox' && name === 'services') {
@@ -27,6 +32,11 @@ const Contact = (props) => {
                 [name]: value,
             }))
         }   
+    }
+
+
+    const handleRadioChange = (e) => {
+        setSelectedService(e.target.value)
     }
 
 
@@ -70,7 +80,7 @@ const Contact = (props) => {
                             <input 
                             type="date"
                             name="date"
-                            value={formData.name}
+                            value={formData.date}
                             onChange={handleChange}
                             />
                     </fieldset>
@@ -80,37 +90,55 @@ const Contact = (props) => {
                             <legend>Sevices</legend>
 
                                 <label>
-                                <input 
-                                type="checkbox" 
+                                <input
+                                name="service"
+                                type="radio"
+                                value="hair"
+                                onChange={handleRadioChange}
                                 />
                                 Hair
                                 </label>
                                 <label>
                                 How many
-                                <input type="number" />
+                                <input 
+                                type="number"
+                                disabled={selectedService !== 'hair'} 
+                                />
                                 </label>
 
                                 <label>
                                 <input 
-                                type='checkbox'
+                                name="service"
+                                type='radio'
+                                value="makeup"
+                                onChange={handleRadioChange}
                                 />
                                 Makeup
                                 </label>
                                 <label>
                                 How many
-                                <input type="number" />
+                                <input 
+                                type="number"
+                                disabled={selectedService !== 'makeup'} 
+                                />
                                 </label>
 
                                 <label>
                                 <input 
-                                type="checkbox" 
+                                name="service"
+                                type="radio" 
+                                value="both"
+                                onChange={handleRadioChange}
                                 />
                                 Hair AND Makeup
                                 </label>
 
                                 <label>
                                 How many
-                                <input type="number" />
+                                <input 
+                                type="number"
+                                disabled={selectedService !== 'both'} 
+                                />
                                 </label>
                     </fieldset>
 
