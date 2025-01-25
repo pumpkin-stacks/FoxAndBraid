@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import "../FoxAndBraid.css";
 
 const NavigationBar = (props) => {
   return (
     <>
-      <div className="navBar">
+      <div className="navBar mainColor">
         <Link to="/">
           <button>Home</button>
         </Link>

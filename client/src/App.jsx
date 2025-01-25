@@ -13,8 +13,10 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="flexboxCenterColumn" style={{ minHeight: "100vh" }}>
-      <NavigationBar className />
+    <div
+      className="flexboxCenterColumn"
+      style={{ minHeight: "100vh", minWidth: "100vw" }}>
+      <NavigationBar className="navBar" />
       <Routes>
         <Route path="/" element={<MainPage />} />
         <Route path="/about" element={<About />} />
