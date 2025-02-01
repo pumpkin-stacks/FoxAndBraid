@@ -2,50 +2,62 @@ import React, { useState } from 'react';
 
 const Contact = (props) => {
 
-    const [formData, setFormData] = useState({
+
+    // This object is the default form state
+    const defaultFormState = {
         name: '',
         email: '',
         phoneNumber: '',
         eventDate: '',
         streetAddress: '',
-        
-    })
+        service:'',
+        quantity: ''
+    }
 
+    // useState hook to handle form data, has the above object as the default
+    const [formData, setFormData] = useState(defaultFormState);
+
+
+    // UseState hook to handle radio button state (services)
     const [selectedService, setSelectedService] = useState('');
     
 
 
-
+// When radio button is not selected, remove numbers
 
     const handleChange = (e) => {
-        const {name, email, phoneNumber, eventDate, services, location} = e.target;
-        if (type === 'checkbox' && name === 'services') {
+        const {name, type, value} = e.target;
+        if (type === 'radio' && name === 'service') {
             setFormData((prevState) => ({
                 ...prevState,
-                services: checked
-                ? [...prevState.services, value]
-                : prevState.services.filter((service) => service !== value),
-            }))
+                service: value,
+            }));
         } else {
             setFormData((prevState) => ({
                 ...prevState,
                 [name]: value,
             }))
-        }   
+        }
     }
-
 
     const handleRadioChange = (e) => {
-        setSelectedService(e.target.value)
+        setSelectedService(e.target.value);
+        setFormData((prevState) => ({
+            ...defaultFormState,
+            services: e.target.value
+        }))
     }
 
+    // needs an axios post request to send data to email, needs work in the backend 56
+    // const submitHandler = () => {
+
+    //     }
 
     return (
         <>
             <p>CONTACT PAGE</p>
             <div className='info'>
-                <form className='form'>
-
+                <form className='form'> 
 
                     <fieldset className='contactField'>
                         <legend>Contact info</legend>
@@ -85,7 +97,7 @@ const Contact = (props) => {
                             />
                     </fieldset>
 
-
+                    {/* SERVICES RADIO BUTTONS */}
                     <fieldset className="servicesField">
                             <legend>Sevices</legend>
 
@@ -102,6 +114,10 @@ const Contact = (props) => {
                                 How many
                                 <input 
                                 type="number"
+                                min="0"
+                                value={formData.quantity}
+                                onChange={handleChange}
+                                name="quantity"
                                 disabled={selectedService !== 'hair'} 
                                 />
                                 </label>
@@ -119,6 +135,10 @@ const Contact = (props) => {
                                 How many
                                 <input 
                                 type="number"
+                                min="0"
+                                value={formData.quantity}
+                                onChange={handleChange}
+                                name="quantity"
                                 disabled={selectedService !== 'makeup'} 
                                 />
                                 </label>
@@ -137,6 +157,10 @@ const Contact = (props) => {
                                 How many
                                 <input 
                                 type="number"
+                                min="0"
+                                value={formData.quantity}
+                                onChange={handleChange}
+                                name="quantity"
                                 disabled={selectedService !== 'both'} 
                                 />
                                 </label>
@@ -164,7 +188,7 @@ const Contact = (props) => {
                             <input type="text" />
                     </fieldset>
 
-
+                    <button>Submit</button>
                 </form>
             </div>
         </>
