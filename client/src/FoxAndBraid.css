@@ -1,12 +1,12 @@
-/* :root {
+:root {
   --mainColor: #7867ad;
   --trimColor: #f7efe5;
   --backgroundColor: #e2bfd9;
   --accessoryColor: #c8a1e0;
 }
 
-/* Pallette and other groupings */
-/* .mainColor {
+/* Pallette and other groupings  */
+.mainColor {
   background: var(--mainColor);
 }
 
@@ -27,6 +27,16 @@
     cursive;
 }
 
-/* Mobile screen settings */
-/* @media screen and (max-width: 700px) {
-} */ 
+/* Mobile screen settings @media screen and (max-width: 700px) {
+} */
+
+.flexboxCenterColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.flexboxCenter {
+  display: flex;
+  justify-content: center;
+}

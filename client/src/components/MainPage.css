@@ -1,0 +1,33 @@
+#pageDiv {
+  background-image: url("./Photos/FoxAndBraid_Assets/3R4A5608.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100vw;
+  background-position: center;
+  background-position-y: 25%;
+  height: 100vw;
+  width: 100vh;
+}
+
+#introContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: top;
+  padding: 5%;
+}
+
+#logoMenu {
+  display: flex;
+  flex-direction: column;
+}
+
+#logoImage {
+  max-width: 50%;
+  max-height: 50%;
+  border-radius: 30px;
+  border: solid;
+  border-color: #f7efe5;
+  border-width: 3%;
+}
+#aboutMeBlurb {
+  max-width: 30%;
+}
