@@ -11,7 +11,7 @@ const Contact = (props) => {
         eventDate: '',
         streetAddress: '',
         service:'',
-        quantity: ''
+        quantities: {hair: '', makeup: '', both: ''}
     }
 
     // useState hook to handle form data, has the above object as the default
@@ -23,32 +23,38 @@ const Contact = (props) => {
     
 
 
-// When radio button is not selected, remove numbers
 
     const handleChange = (e) => {
-        const {name, type, value} = e.target;
-        if (type === 'radio' && name === 'service') {
+        const { name, type, value } = e.target;
+    
+        if (name === 'quantity') {
             setFormData((prevState) => ({
                 ...prevState,
-                service: value,
+                quantities: {
+                    ...prevState.quantities,
+                    [selectedService]: value // Only update the quantity for the selected service
+                }
             }));
         } else {
             setFormData((prevState) => ({
                 ...prevState,
-                [name]: value,
-            }))
+                [name]: value
+            }));
         }
-    }
+    };
+    
 
     const handleRadioChange = (e) => {
-        setSelectedService(e.target.value);
+        const selected = e.target.value;
+        setSelectedService(selected);
         setFormData((prevState) => ({
-            ...defaultFormState,
-            services: e.target.value
+            ...prevState,
+            service: selected,
+            quantities: {hair: '', makeup: '', both: ''}
         }))
     }
 
-    // needs an axios post request to send data to email, needs work in the backend 56
+    // needs an axios post request to send data to email, needs work in the backend
     // const submitHandler = () => {
 
     //     }
@@ -115,7 +121,7 @@ const Contact = (props) => {
                                 <input 
                                 type="number"
                                 min="0"
-                                value={formData.quantity}
+                                value={formData.quantities.hair}
                                 onChange={handleChange}
                                 name="quantity"
                                 disabled={selectedService !== 'hair'} 
@@ -136,7 +142,7 @@ const Contact = (props) => {
                                 <input 
                                 type="number"
                                 min="0"
-                                value={formData.quantity}
+                                value={formData.quantities.makeup}
                                 onChange={handleChange}
                                 name="quantity"
                                 disabled={selectedService !== 'makeup'} 
@@ -158,7 +164,7 @@ const Contact = (props) => {
                                 <input 
                                 type="number"
                                 min="0"
-                                value={formData.quantity}
+                                value={formData.quantities.both}
                                 onChange={handleChange}
                                 name="quantity"
                                 disabled={selectedService !== 'both'} 
