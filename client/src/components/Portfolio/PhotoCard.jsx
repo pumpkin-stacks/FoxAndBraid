@@ -1,12 +1,10 @@
-import { Card, CardTitle, CardText, CardBody } from "reactstrap";
+import { Card, CardBody } from "reactstrap";
 
-const PhotoCard = (props) => {
-  let { imageURL } = props.image;
-
+const PhotoCard = (image) => {
   return (
     <>
       <Card>
-        <img alt="sample" src={imageURL} />
+        <img alt={image.name} src={image.url} />
         <CardBody></CardBody>
       </Card>
     </>

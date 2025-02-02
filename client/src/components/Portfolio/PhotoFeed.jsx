@@ -1,10 +1,10 @@
 import PhotoCard from "./PhotoCard";
 
-const PhotoFeed = (Props) => {
+const PhotoFeed = (props) => {
   return (
     <>
-      {Props.portfolioItems.map((image, index) => (
-        <PhotoCard key={index} image={image} />
+      {props.portfolioItems.map((image) => (
+        <PhotoCard key={image.id} image={image} />
       ))}
     </>
   );
