@@ -4,11 +4,12 @@ import ReviewsCarousel from "./MainPageComponents/ReviewsCarousel";
 import Logo from "./Photos/LogoMain.jpeg";
 
 import "./MainPage.css";
+import "../FoxAndBraid.css";
 
 const MainPage = (props) => {
   return (
     <div
-      id="pageDiv"
+      className="pageDiv fontPrimary"
       style={{
         height: "100vh",
         width: "100vw",

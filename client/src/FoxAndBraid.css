@@ -27,16 +27,132 @@
     cursive;
 }
 
-/* Mobile screen settings @media screen and (max-width: 700px) {
-} */
-
-.flexboxCenterColumn {
+.appContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 100vh;
+  width: 100vw;
 }
 
 .flexboxCenter {
   display: flex;
   justify-content: center;
+}
+
+.contentWrapper {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+/* NAVIGATION BAR */
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers items on desktop */
+  padding: 10px 20px;
+  width: 100%;
+}
+
+/* Hide menu icon on desktop */
+.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+}
+
+.navLinks {
+  display: flex;
+  gap: 15px;
+}
+
+/* FOOTER */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centered layout */
+  padding: 10px 20px;
+  width: 100%;
+  flex-direction: column; /* Ensure stacking on all screen sizes */
+  text-align: center;
+}
+
+.footerLinks {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  background: var(--accessoryColor);
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+
+.navButton:hover {
+  background: var(--trimColor);
+  color: black;
+}
+
+/* FOOTER LOGO */
+.footerLogo {
+  max-height: 40px;
+  width: auto;
+}
+
+/* MOBILE STYLES */
+@media only screen and (max-width: 768px) {
+  .menuToggle {
+    display: block; /* Show menu icon only on mobile */
+  }
+
+  .navLinks {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--mainColor);
+    padding: 10px 0;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    max-height: 100vh;
+    justify-content: center;
+  }
+
+  .navLinks.open {
+    display: flex;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footerLinks {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .navButton {
+    width: 60%;
+    max-width: 140px;
+  }
+
+  .footerLogo {
+    margin-top: 10px;
+  }
 }

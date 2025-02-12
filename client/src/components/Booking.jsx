@@ -1,12 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const Booking = (props) => {
-    return (
-        <>
-            <p>BOOKING PAGE</p>
-        
-        </>
-    );
+  return (
+    <>
+      <p>Booking page shows availability. Ideally a calendar</p>
+    </>
+  );
 };
 
 export default Booking;

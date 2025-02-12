@@ -4,22 +4,22 @@ import { Link } from "react-router-dom";
 import "../FoxAndBraid.css";
 import Logo from "./Photos/LogoMain.jpeg";
 
-const Footer = (props) => {
+const Footer = () => {
   return (
-    <div style={{ maxHeight: "15%" }}>
-      <footerContainer class="mainColor flexboxCenter">
-        <Link to="/contact">
-          <button>Contact</button>
+    <footer className="footer mainColor fontPrimary">
+      <div className="footerLinks">
+        <Link to="/contact" className="navButton">
+          Contact
         </Link>
-        <Link to="/aboutMe">
-          <button>About Me</button>
+        <Link to="/Services" className="navButton">
+          Services
         </Link>
-        <Link to="/portfolio">
-          <button>Portfolio</button>
+        <Link to="/portfolio" className="navButton">
+          Portfolio
         </Link>
-        <img src={Logo} style={{ maxHeight: "10%", maxWidth: "10%" }} />
-      </footerContainer>
-    </div>
+      </div>
+      <img src={Logo} className="footerLogo" alt="Fox&BraidLogo" />
+    </footer>
   );
 };
 

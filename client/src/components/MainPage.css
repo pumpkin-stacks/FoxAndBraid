@@ -1,13 +1,15 @@
-#pageDiv {
+/* Global parameters */
+.pageDiv {
   background-image: url("./Photos/FoxAndBraid_Assets/3R4A5608.jpeg");
   background-repeat: no-repeat;
-  background-size: 100vw;
+  background-size: cover;
   background-position: center;
   background-position-y: 25%;
-  height: 100vw;
-  width: 100vh;
+  height: 100vh;
+  width: 100%;
 }
 
+/* Main Page parameters */
 #introContainer {
   display: flex;
   justify-content: space-between;
@@ -30,4 +32,52 @@
 }
 #aboutMeBlurb {
   max-width: 30%;
+}
+
+/* Services CSS */
+.servicesPageDiv {
+  background-image: url("./Photos/FoxAndBraid_Assets/olga-thelavart-vS3idIiYxX0-unsplash.jpg");
+  background-size: cover; /* Ensures full coverage */
+  background-position: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centers content vertically */
+}
+
+#servicesDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Centers text horizontally */
+  padding: 20px;
+  border-radius: 10px; /* Optional: Rounds corners */
+  max-width: 600px; /* Prevents it from being too wide */
+  width: 90vw;
+  text-align: center;
+}
+
+#servicesList {
+  padding: 0;
+  list-style: none;
+  width: 100%; /* Ensures list stretches inside container */
+}
+
+.servicesListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+}
+
+.servicesListItem span {
+  flex: 1;
+  text-align: left;
+}
+
+.servicesListItem span:last-child {
+  text-align: right;
 }
