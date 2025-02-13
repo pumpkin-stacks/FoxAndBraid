@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "axios": "^1.7.9",
+    "reactstrap": "^9.2.3"
+  }
+}
