@@ -1,7 +1,6 @@
 
 import { Router } from "express"
-import { portfolioController } from "../controllers/portfolio.controller.js";
-
+import { portfolioController } from "../Controllers/portfolio.controller.js";
 const router = Router();
 
 router.route('/portfolio')

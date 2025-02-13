@@ -6,26 +6,28 @@ console.log("Drive ID: ", process.env.DRIVE_ID)
 console.log("API KEY: ", process.env.API_KEY)
 // This Google API stuff can stay in here, the controller file 
 // google repository details
-const googleAPIAddress = "https://www.googleapis.com/drive/v3/files?q=";
+const googleAPIAddress = "https://www.googleapis.com/drive/v3/files?q='";
+const filterParams = "'+in+parents+and+(mimeType='image/jpeg'+or+mimeType='image/png')&key="
+const googleAPITrailer = "=[YOUR_API_KEY]"
 const directoryId = process.env.DRIVE_ID;
 const token = process.env.API_KEY;
-
-//enable cors to bypass browser image blocking
-
-
 
 // new controller
 export const portfolioController = {
   getGalleryImages: async (req, res) => {
       try {
           const response = await axios.get(
-              `${googleAPIAddress}"${directoryId}" in parents&key=${token}&fields=files(id,name,mimeType,webContentLink)` // Include webContentLink
+              `${googleAPIAddress}${directoryId}${filterParams}${token}` // Include webContentLink
           );
 
-          const files = response.data.files || []; // Handle cases where 'files' might be undefined
+          const images = response.data.files.map(file => ({
+            id: file.id,
+            name: file.name,
+            url: `https://www.googleapis.com/drive/v3/files/${file.id}?alt=media&key=${token}`
+        }));// Handle cases where 'files' might be undefined
 
           // Return metadata for client to then request the image itself
-          res.json(files);
+          res.json(images);
 
       } catch (error) {
           console.error("Error fetching image list from Google Drive:", error.response ? error.response.data : error.message); // More detailed error info
